@@ -33,7 +33,8 @@ def score(sound, input_words):
             letter_counter += countChar(clear(word), clear(w_sound))
     return letter_counter
 #############################################################
-input_line = "Havana"
+input_line = input("# Digite sua busca: ")
+#input_line = "Havana"
 input_words = input_line.split()
 
 songs = {}
@@ -41,4 +42,12 @@ with open('songs.txt') as song:
     for l in song.readlines():
         sound = l.replace('\n', '')
         songs[sound] = score(sound, input_words)
-print(songs)
+songs = sorted(songs.items(), key=lambda song: song[0])
+songs = sorted(songs, key=lambda song: song[1], reverse= True)
+
+######## Print method
+print("#")
+print("# Resultados:")
+RANKING_NUMBER=10
+for x in range(RANKING_NUMBER):
+    print(f'# {songs[x][1]} pontos, {songs[x][0]}')
