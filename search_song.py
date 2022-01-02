@@ -44,7 +44,7 @@ input_line = input("# Digite sua busca: ")
 input_words = input_line.split()
 
 songs = {}
-filename = 'song-finder/songs.txt'
+filename = 'songs.txt'
 with open(filename) as song:
     for l in song.readlines():
         sound = l.replace('\n', '')
