@@ -11,16 +11,12 @@ def clear(string):
 
 def countChar(search_word, compared_word):
     count = 0
-    if compared_word == 'feat':
-        count -= 5
-    if search_word == 'feat':
-        count += 5
     #print(search_word + ' ' + compared_word)
     size = min(len(search_word), len(compared_word))
     for index in range(size):
         if search_word[index] == compared_word[index]:
             count += 1
-    if count == size:
+    if search_word == compared_word:
         #match whole word
         count += 10
     return count
@@ -28,9 +24,19 @@ def countChar(search_word, compared_word):
 def score(sound, input_words):
     sound_words = sound.split()
     letter_counter = 0
+    has_feat_in_word = False
+    has_feat_in_song = False
     for word in input_words:
         for w_sound in sound_words:
+            if clear(w_sound) == 'feat':
+                has_feat_in_song = True
             letter_counter += countChar(clear(word), clear(w_sound))
+        if clear(word) == 'feat':
+            has_feat_in_word = True
+            
+    if has_feat_in_song and not has_feat_in_word:
+        letter_counter -= 5
+
     return letter_counter
 #############################################################
 input_line = input("# Digite sua busca: ")
@@ -38,7 +44,8 @@ input_line = input("# Digite sua busca: ")
 input_words = input_line.split()
 
 songs = {}
-with open('songs.txt') as song:
+filename = 'song-finder/songs.txt'
+with open(filename) as song:
     for l in song.readlines():
         sound = l.replace('\n', '')
         songs[sound] = score(sound, input_words)
