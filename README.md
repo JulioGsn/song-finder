@@ -13,7 +13,7 @@ python3 search_song.py
 ```
 
 ## Como funciona?
-Obs: No reposítório, o arquivo [songs.txt](https://github.com/JulioGsn/song-finder/edit/main/songs.txt) representa nosso banco de músicas, onde cada linha é uma canção.
+Obs: No reposítório, o arquivo [songs.txt](https://github.com/JulioGsn/song-finder/edit/main/songs.txt) representa nosso banco de músicas, onde cada linha é uma canção. Assim é mais fácil adicionar ou retirar músicas desse arquivo. Uma possível melhora é utilizar o formato .json para conectar a alguma API.
 
 Ao executar o programa, é pedido ao usuário que "# Digite sua busca: ". 
 O programa então lê cada linha do arquivo "songs.txt" e cria um dicionário (uma estrutura de dados semelhante às hash tables, na linguagem Python) sendo a chave o nome da música,
@@ -26,7 +26,7 @@ e uma música da lista de músicas.
 ```
 songs[song] = score(searched_words, song)
 ```
-A função *score* é bem interessante. Para fazer a comparação entre as palavras pesquisadas e as palavras da música, foi utilizado arrays, uma estrutura de dados clássicas
+A função *score* é bem interessante. Para fazer a comparação entre as palavras pesquisadas e as palavras da música, foi utilizado arrays, uma estrutura de dados clássica
 onde cada posição pode ser acessada por índices, iniciando com índice 0.
 Como cada palavra é separada por um ou mais espaços, a função *split()* do python retorna essas palavras como valores de um array, podendo ser acessadas por índices.
 Logo, a música "All Of Me" ficaria ``` ['All', 'Of', 'Me'] ```
