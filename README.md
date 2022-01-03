@@ -49,3 +49,4 @@ ordem alfabética, como foi orientado pelo problema. Logo, a função *sorted* f
 ### Resultados
 Por fim, o usuário se depara com a exibição dos resultados referentes à sua busca.
 
+![alt text](https://github.com/JulioGsn/song-finder/blob/main/song-finder.png)
