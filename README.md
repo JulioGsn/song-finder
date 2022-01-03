@@ -2,6 +2,16 @@
 Programa que rebebe um termo como entrada e busca por ele numa lista de músicas. As músicas recebem uma pontuação de acordo com algumas regras pré-estabelecidas
 e no final é exibido um ranking com as 10 mais bem pontuadas.
 
+### RUN
+Primeiro, clone o repositório ou faça o download do código fonte.
+Para executar o programa, é necessário ter Python instalado na sua máquina.
+Esse projeto foi desenvolvido utilizando Python na versão 3.8.10. Deve funcionar em versões >= 3.0
+
+No linux,
+```
+python3 search_song.py
+```
+
 ## Como funciona?
 Obs: No reposítório, o arquivo [songs.txt](https://github.com/JulioGsn/song-finder/edit/main/songs.txt) representa nosso banco de músicas, onde cada linha é uma canção.
 
